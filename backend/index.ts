@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth";
@@ -11,6 +12,14 @@ const app = express();
 const PORT = process.env.PORT || "3000";
 
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Replace with your frontend's origin
+    methods: ["GET", "POST", "PUT", "DELETE"], // Specify allowed HTTP methods
+    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
+  }),
+);
 
 app.all("/api/auth/{*any}", toNodeHandler(auth));
 

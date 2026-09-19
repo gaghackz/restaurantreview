@@ -1,0 +1,5 @@
+"use client";
+import {FormEvent,useState} from "react";import {apiJson} from "@/lib/api";
+export default function Page(){const [id,setId]=useState("");const [content,setContent]=useState("");const [msg,setMsg]=useState("");const [err,setErr]=useState("");
+ async function submit(e:FormEvent){e.preventDefault();try{const d=await apiJson("/api/v1/reviews",{method:"POST",body:JSON.stringify({restaurantId:Number(id),content})});setMsg(d.message||"Review submitted.");setContent("")}catch(e){setErr(e instanceof Error?e.message:"Failed")}}
+ return <main style={{padding:24,maxWidth:650}}><h1>Submit review</h1><form onSubmit={submit} style={{display:"grid",gap:12}}><input type="number" placeholder="Restaurant ID" value={id} onChange={e=>setId(e.target.value)} required/><textarea rows={6} placeholder="Write your review..." value={content} onChange={e=>setContent(e.target.value)} required/><button>Submit review</button></form>{msg&&<p>{msg}</p>}{err&&<p style={{color:"crimson"}}>{err}</p>}</main>}
