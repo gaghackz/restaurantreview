@@ -30,6 +30,7 @@ export type ReviewAvgAggregateOutputType = {
   id: number | null
   confidence: number | null
   score: number | null
+  predictedRating: number | null
   restaurantId: number | null
 }
 
@@ -37,6 +38,7 @@ export type ReviewSumAggregateOutputType = {
   id: number | null
   confidence: number | null
   score: number | null
+  predictedRating: number | null
   restaurantId: number | null
 }
 
@@ -47,6 +49,7 @@ export type ReviewMinAggregateOutputType = {
   sentiment: $Enums.Sentiment | null
   confidence: number | null
   score: number | null
+  predictedRating: number | null
   userId: string | null
   restaurantId: number | null
   createdAt: Date | null
@@ -61,6 +64,7 @@ export type ReviewMaxAggregateOutputType = {
   sentiment: $Enums.Sentiment | null
   confidence: number | null
   score: number | null
+  predictedRating: number | null
   userId: string | null
   restaurantId: number | null
   createdAt: Date | null
@@ -75,6 +79,7 @@ export type ReviewCountAggregateOutputType = {
   sentiment: number
   confidence: number
   score: number
+  predictedRating: number
   userId: number
   restaurantId: number
   createdAt: number
@@ -88,6 +93,7 @@ export type ReviewAvgAggregateInputType = {
   id?: true
   confidence?: true
   score?: true
+  predictedRating?: true
   restaurantId?: true
 }
 
@@ -95,6 +101,7 @@ export type ReviewSumAggregateInputType = {
   id?: true
   confidence?: true
   score?: true
+  predictedRating?: true
   restaurantId?: true
 }
 
@@ -105,6 +112,7 @@ export type ReviewMinAggregateInputType = {
   sentiment?: true
   confidence?: true
   score?: true
+  predictedRating?: true
   userId?: true
   restaurantId?: true
   createdAt?: true
@@ -119,6 +127,7 @@ export type ReviewMaxAggregateInputType = {
   sentiment?: true
   confidence?: true
   score?: true
+  predictedRating?: true
   userId?: true
   restaurantId?: true
   createdAt?: true
@@ -133,6 +142,7 @@ export type ReviewCountAggregateInputType = {
   sentiment?: true
   confidence?: true
   score?: true
+  predictedRating?: true
   userId?: true
   restaurantId?: true
   createdAt?: true
@@ -234,6 +244,7 @@ export type ReviewGroupByOutputType = {
   sentiment: $Enums.Sentiment | null
   confidence: number | null
   score: number | null
+  predictedRating: number | null
   userId: string
   restaurantId: number
   createdAt: Date
@@ -271,6 +282,7 @@ export type ReviewWhereInput = {
   sentiment?: Prisma.EnumSentimentNullableFilter<"Review"> | $Enums.Sentiment | null
   confidence?: Prisma.FloatNullableFilter<"Review"> | number | null
   score?: Prisma.FloatNullableFilter<"Review"> | number | null
+  predictedRating?: Prisma.FloatNullableFilter<"Review"> | number | null
   userId?: Prisma.StringFilter<"Review"> | string
   restaurantId?: Prisma.IntFilter<"Review"> | number
   createdAt?: Prisma.DateTimeFilter<"Review"> | Date | string
@@ -287,6 +299,7 @@ export type ReviewOrderByWithRelationInput = {
   sentiment?: Prisma.SortOrderInput | Prisma.SortOrder
   confidence?: Prisma.SortOrderInput | Prisma.SortOrder
   score?: Prisma.SortOrderInput | Prisma.SortOrder
+  predictedRating?: Prisma.SortOrderInput | Prisma.SortOrder
   userId?: Prisma.SortOrder
   restaurantId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -306,6 +319,7 @@ export type ReviewWhereUniqueInput = Prisma.AtLeast<{
   sentiment?: Prisma.EnumSentimentNullableFilter<"Review"> | $Enums.Sentiment | null
   confidence?: Prisma.FloatNullableFilter<"Review"> | number | null
   score?: Prisma.FloatNullableFilter<"Review"> | number | null
+  predictedRating?: Prisma.FloatNullableFilter<"Review"> | number | null
   userId?: Prisma.StringFilter<"Review"> | string
   restaurantId?: Prisma.IntFilter<"Review"> | number
   createdAt?: Prisma.DateTimeFilter<"Review"> | Date | string
@@ -322,6 +336,7 @@ export type ReviewOrderByWithAggregationInput = {
   sentiment?: Prisma.SortOrderInput | Prisma.SortOrder
   confidence?: Prisma.SortOrderInput | Prisma.SortOrder
   score?: Prisma.SortOrderInput | Prisma.SortOrder
+  predictedRating?: Prisma.SortOrderInput | Prisma.SortOrder
   userId?: Prisma.SortOrder
   restaurantId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -344,6 +359,7 @@ export type ReviewScalarWhereWithAggregatesInput = {
   sentiment?: Prisma.EnumSentimentNullableWithAggregatesFilter<"Review"> | $Enums.Sentiment | null
   confidence?: Prisma.FloatNullableWithAggregatesFilter<"Review"> | number | null
   score?: Prisma.FloatNullableWithAggregatesFilter<"Review"> | number | null
+  predictedRating?: Prisma.FloatNullableWithAggregatesFilter<"Review"> | number | null
   userId?: Prisma.StringWithAggregatesFilter<"Review"> | string
   restaurantId?: Prisma.IntWithAggregatesFilter<"Review"> | number
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Review"> | Date | string
@@ -357,6 +373,7 @@ export type ReviewCreateInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   processedAt?: Date | string | null
@@ -371,6 +388,7 @@ export type ReviewUncheckedCreateInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   userId: string
   restaurantId: number
   createdAt?: Date | string
@@ -384,6 +402,7 @@ export type ReviewUpdateInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -398,6 +417,7 @@ export type ReviewUncheckedUpdateInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   restaurantId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -412,6 +432,7 @@ export type ReviewCreateManyInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   userId: string
   restaurantId: number
   createdAt?: Date | string
@@ -425,6 +446,7 @@ export type ReviewUpdateManyMutationInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -437,6 +459,7 @@ export type ReviewUncheckedUpdateManyInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   restaurantId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -461,6 +484,7 @@ export type ReviewCountOrderByAggregateInput = {
   sentiment?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
   score?: Prisma.SortOrder
+  predictedRating?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   restaurantId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -472,6 +496,7 @@ export type ReviewAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
   score?: Prisma.SortOrder
+  predictedRating?: Prisma.SortOrder
   restaurantId?: Prisma.SortOrder
 }
 
@@ -482,6 +507,7 @@ export type ReviewMaxOrderByAggregateInput = {
   sentiment?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
   score?: Prisma.SortOrder
+  predictedRating?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   restaurantId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -496,6 +522,7 @@ export type ReviewMinOrderByAggregateInput = {
   sentiment?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
   score?: Prisma.SortOrder
+  predictedRating?: Prisma.SortOrder
   userId?: Prisma.SortOrder
   restaurantId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -507,6 +534,7 @@ export type ReviewSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   confidence?: Prisma.SortOrder
   score?: Prisma.SortOrder
+  predictedRating?: Prisma.SortOrder
   restaurantId?: Prisma.SortOrder
 }
 
@@ -616,6 +644,7 @@ export type ReviewCreateWithoutUserInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   processedAt?: Date | string | null
@@ -629,6 +658,7 @@ export type ReviewUncheckedCreateWithoutUserInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   restaurantId: number
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -671,6 +701,7 @@ export type ReviewScalarWhereInput = {
   sentiment?: Prisma.EnumSentimentNullableFilter<"Review"> | $Enums.Sentiment | null
   confidence?: Prisma.FloatNullableFilter<"Review"> | number | null
   score?: Prisma.FloatNullableFilter<"Review"> | number | null
+  predictedRating?: Prisma.FloatNullableFilter<"Review"> | number | null
   userId?: Prisma.StringFilter<"Review"> | string
   restaurantId?: Prisma.IntFilter<"Review"> | number
   createdAt?: Prisma.DateTimeFilter<"Review"> | Date | string
@@ -684,6 +715,7 @@ export type ReviewCreateWithoutRestaurantInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
   processedAt?: Date | string | null
@@ -697,6 +729,7 @@ export type ReviewUncheckedCreateWithoutRestaurantInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -736,6 +769,7 @@ export type ReviewCreateManyUserInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   restaurantId: number
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -748,6 +782,7 @@ export type ReviewUpdateWithoutUserInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -761,6 +796,7 @@ export type ReviewUncheckedUpdateWithoutUserInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   restaurantId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -774,6 +810,7 @@ export type ReviewUncheckedUpdateManyWithoutUserInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   restaurantId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -787,6 +824,7 @@ export type ReviewCreateManyRestaurantInput = {
   sentiment?: $Enums.Sentiment | null
   confidence?: number | null
   score?: number | null
+  predictedRating?: number | null
   userId: string
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -799,6 +837,7 @@ export type ReviewUpdateWithoutRestaurantInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   processedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -812,6 +851,7 @@ export type ReviewUncheckedUpdateWithoutRestaurantInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -825,6 +865,7 @@ export type ReviewUncheckedUpdateManyWithoutRestaurantInput = {
   sentiment?: Prisma.NullableEnumSentimentFieldUpdateOperationsInput | $Enums.Sentiment | null
   confidence?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  predictedRating?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -840,6 +881,7 @@ export type ReviewSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   sentiment?: boolean
   confidence?: boolean
   score?: boolean
+  predictedRating?: boolean
   userId?: boolean
   restaurantId?: boolean
   createdAt?: boolean
@@ -856,6 +898,7 @@ export type ReviewSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   sentiment?: boolean
   confidence?: boolean
   score?: boolean
+  predictedRating?: boolean
   userId?: boolean
   restaurantId?: boolean
   createdAt?: boolean
@@ -872,6 +915,7 @@ export type ReviewSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   sentiment?: boolean
   confidence?: boolean
   score?: boolean
+  predictedRating?: boolean
   userId?: boolean
   restaurantId?: boolean
   createdAt?: boolean
@@ -888,6 +932,7 @@ export type ReviewSelectScalar = {
   sentiment?: boolean
   confidence?: boolean
   score?: boolean
+  predictedRating?: boolean
   userId?: boolean
   restaurantId?: boolean
   createdAt?: boolean
@@ -895,7 +940,7 @@ export type ReviewSelectScalar = {
   processedAt?: boolean
 }
 
-export type ReviewOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "content" | "status" | "sentiment" | "confidence" | "score" | "userId" | "restaurantId" | "createdAt" | "updatedAt" | "processedAt", ExtArgs["result"]["review"]>
+export type ReviewOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "content" | "status" | "sentiment" | "confidence" | "score" | "predictedRating" | "userId" | "restaurantId" | "createdAt" | "updatedAt" | "processedAt", ExtArgs["result"]["review"]>
 export type ReviewInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   restaurant?: boolean | Prisma.RestaurantDefaultArgs<ExtArgs>
@@ -922,6 +967,7 @@ export type $ReviewPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     sentiment: $Enums.Sentiment | null
     confidence: number | null
     score: number | null
+    predictedRating: number | null
     userId: string
     restaurantId: number
     createdAt: Date
@@ -1358,6 +1404,7 @@ export interface ReviewFieldRefs {
   readonly sentiment: Prisma.FieldRef<"Review", 'Sentiment'>
   readonly confidence: Prisma.FieldRef<"Review", 'Float'>
   readonly score: Prisma.FieldRef<"Review", 'Float'>
+  readonly predictedRating: Prisma.FieldRef<"Review", 'Float'>
   readonly userId: Prisma.FieldRef<"Review", 'String'>
   readonly restaurantId: Prisma.FieldRef<"Review", 'Int'>
   readonly createdAt: Prisma.FieldRef<"Review", 'DateTime'>

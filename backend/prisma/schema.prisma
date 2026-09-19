@@ -99,6 +99,8 @@ model Review {
   sentiment    Sentiment?
   confidence   Float?
   score        Float?
+  predictedRating Float?
+  
 
   userId       String
   restaurantId Int
@@ -126,5 +128,6 @@ enum ReviewStatus {
 
 enum Sentiment {
   POSITIVE
+  NEUTRAL
   NEGATIVE
 }

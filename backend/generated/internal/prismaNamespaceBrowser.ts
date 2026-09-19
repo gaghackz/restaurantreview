@@ -152,6 +152,7 @@ export const ReviewScalarFieldEnum = {
   sentiment: 'sentiment',
   confidence: 'confidence',
   score: 'score',
+  predictedRating: 'predictedRating',
   userId: 'userId',
   restaurantId: 'restaurantId',
   createdAt: 'createdAt',

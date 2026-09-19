@@ -21,6 +21,7 @@ export type ReviewStatus = (typeof ReviewStatus)[keyof typeof ReviewStatus]
 
 export const Sentiment = {
   POSITIVE: 'POSITIVE',
+  NEUTRAL: 'NEUTRAL',
   NEGATIVE: 'NEGATIVE'
 } as const
 
